@@ -1,6 +1,7 @@
-FROM ubuntu:16.04
+FROM phusion/baseimage:0.10.1
 
-WORKDIR /root/cita
+CMD ["/sbin/my_init"]
+
 COPY solc /usr/bin/
 COPY libgmssl.so.1.0.0 /usr/local/lib/
 
