@@ -14,6 +14,7 @@ RUN apt-get update \
                           libsodium* \
                           curl \
                           libcurl3 \
+                          sysstat \
     && chmod +x /usr/bin/solc \
     && ln -srf /usr/local/lib/libgmssl.so.1.0.0 /usr/local/lib/libgmssl.so \
     && ldconfig \
