@@ -14,13 +14,14 @@ RUN apt-get update \
                           libsodium* \
                           libsecp256k1-dev \
                           pkg-config \
+                          git \
                           curl \
                           libcurl4 \
                           sysstat \
     && chmod +x /usr/bin/solc \
     && ln -srf /usr/local/lib/libgmssl.so.1.0.0 /usr/local/lib/libgmssl.so \
     && ldconfig \
-    && pip install -U pip \
+    && pip3 install -U pip \
     && pip install pysodium toml \
                           jsonrpcclient[requests]==2.4.2 \
                           secp256k1==0.13.2 \
