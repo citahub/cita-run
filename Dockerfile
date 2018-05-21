@@ -12,6 +12,8 @@ RUN apt-get update \
                           libgoogle-perftools-dev \
                           libssl-dev \
                           libsodium* \
+                          libsecp256k1-dev \
+                          pkg-config \
                           curl \
                           libcurl4 \
                           sysstat \
