@@ -3,6 +3,8 @@ FROM ubuntu:16.04
 WORKDIR /root/cita
 COPY solc /usr/bin/
 COPY libgmssl.so.1.0.0 /usr/local/lib/
+COPY cita_secp256k1_sha3.tar.gz /root/cita
+RUN tar zxvf cita_secp256k1_sha3.tar.gz
 
 RUN apt-get update \
     && apt-get install -y rabbitmq-server \
@@ -32,3 +34,5 @@ RUN apt-get update \
     && apt-get autoremove \
     && apt-get clean \
     && apt-get autoclean
+
+
