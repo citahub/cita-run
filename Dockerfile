@@ -16,6 +16,7 @@ RUN apt-get update \
                           curl \
                           libcurl4 \
                           sysstat \
+                          sudo \
     && cd .. \
     && rm -rf /var/lib/apt/lists \
     && apt-get autoremove \
