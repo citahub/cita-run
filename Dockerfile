@@ -4,7 +4,6 @@ WORKDIR /root/cita
 COPY solc /usr/bin/
 COPY libgmssl.so.1.0.0 /usr/local/lib/
 
-
 RUN apt-get update \
     && apt-get install -y rabbitmq-server \
                           python-pip \
