@@ -1,7 +1,5 @@
 FROM ubuntu:18.04
 
-ENV HOME /opt
-
 RUN apt-get update \
     && apt-get install -y rabbitmq-server \
                           python3-pip \
@@ -33,7 +31,9 @@ RUN git clone https://github.com/ethereum/pyethereum/
 WORKDIR /pyethereum
 RUN git checkout 3d5ec14032cc471f4dcfc7cc5c947294daf85fe0
 RUN python3 setup.py install
-RUN rm -rf pyethereum && rm -rf ~/.cache/pip
+RUN rm -r /pyethereum && rm -r ~/.cache/pip
+
+WORKDIR /
 
 COPY solc /usr/bin/
 RUN chmod +x /usr/bin/solc
