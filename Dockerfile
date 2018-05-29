@@ -23,6 +23,7 @@ RUN apt-get update \
 
 RUN pip3 install -U pip
 RUN pip3 install pysodium toml jsonschema secp256k1 protobuf requests ecdsa \
+     jsonrpcclient[requests]==2.4.2 \
      py_solc==3.0.0 \
      simplejson==3.11.1 \
      pathlib==1.0.1 \
