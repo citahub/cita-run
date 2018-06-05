@@ -21,20 +21,15 @@ RUN apt-get update \
     && apt-get clean \
     && apt-get autoclean
 
-RUN pip3 install -U pip
-RUN pip3 install pysodium toml jsonschema secp256k1 protobuf requests ecdsa \
+RUN pip3 install -U pip \
+     && `which pip3` install pysodium toml jsonschema secp256k1 protobuf requests ecdsa \
      jsonrpcclient[requests]==2.4.2 \
      py_solc==3.0.0 \
      simplejson==3.11.1 \
      pathlib==1.0.1 \
-     pysha3>=1.0.2
-RUN git clone https://github.com/ethereum/pyethereum/
-WORKDIR /pyethereum
-RUN git checkout 3d5ec14032cc471f4dcfc7cc5c947294daf85fe0
-RUN python3 setup.py install
-RUN rm -r /pyethereum && rm -r ~/.cache/pip
-
-WORKDIR /
+     pysha3>=1.0.2 \
+     && `which pip3` install git+https://github.com/ethereum/pyethereum.git@3d5ec14032cc471f4dcfc7cc5c947294daf85fe0 \
+     && rm -r ~/.cache/pip
 
 COPY solc /usr/bin/
 RUN chmod +x /usr/bin/solc
