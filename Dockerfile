@@ -1,4 +1,4 @@
-FROM cita/ubuntu-18.04-20180523
+FROM cita/cita-run:ubuntu-18.04-20180523
 
 WORKDIR /root/cita
 
