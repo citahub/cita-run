@@ -55,4 +55,6 @@ RUN chmod +x /usr/bin/entrypoint.sh
 
 WORKDIR /opt/cita-run
 
+RUN pip3 install -U bitcoin==1.1.42 
+
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
