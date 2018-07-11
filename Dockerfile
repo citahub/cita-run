@@ -10,6 +10,8 @@ RUN git clone https://github.com/cryptape/solidity.git \
     && cp /usr/local/bin/solc /usr/bin \
     && chmod +x /usr/bin/solc
 
+COPY libsolidity.so /usr/local/lib/
+
 WORKDIR /opt/cita-run
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
