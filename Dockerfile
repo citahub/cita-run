@@ -1,4 +1,4 @@
-FROM cita/ubuntu-18.04-20180703-solc-0.4.19
+FROM cita/cita-run:ubuntu-18.04-20180703-solc-0.4.19
 
 WORKDIR /root/cita
 
