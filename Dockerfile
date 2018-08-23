@@ -12,7 +12,7 @@ COPY ./docker-entrypoint.sh ./cita_secp256k1_sha3
 RUN cd cita_secp256k1_sha3 && pwd  && ls -l
 
 WORKDIR /root/cita/cita_secp256k1_sha3
-chmod +x ./docker-entrypoint.sh
+RUN chmod +x ./docker-entrypoint.sh
 ENTRYPOINT ["./docker-entrypoint.sh"]
 
 
