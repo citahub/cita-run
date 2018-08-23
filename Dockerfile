@@ -1,13 +1,18 @@
-FROM cita/cita-run:ubuntu-18.04-20180703-solc-0.4.19
+FROM cita/cita-run:ubuntu-18.04-20180813
 
 WORKDIR /root/cita
 
-RUN apt-get update \
-    && apt-get install -y  wget \
-    && rm -rf /var/lib/apt/lists \
-    && apt-get autoremove \
-    && apt-get clean \
-    && apt-get autoclean \
-    && wget https://cryptape-public.oss-cn-hangzhou.aliyuncs.com/cita_release/cita_secp256k1_sha3.tar.gz  \
+RUN curl -O http://47.104.128.219/cita_secp256k1_sha3.tar.gz   \
     && tar zxvf cita_secp256k1_sha3.tar.gz \
-    && rm -rf cita_secp256k1_sha3.tar.gz
+    && rm -rf cita_secp256k1_sha3.tar.gz \
+    && cd cita_secp256k1_sha3
+
+COPY ./docker-entrypoint.sh ./cita_secp256k1_sha3
+
+RUN cd cita_secp256k1_sha3 && pwd  && ls -l
+
+WORKDIR /root/cita/cita_secp256k1_sha3
+chmod +x ./docker-entrypoint.sh
+ENTRYPOINT ["./docker-entrypoint.sh"]
+
+
