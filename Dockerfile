@@ -9,8 +9,6 @@ RUN curl -O http://47.104.128.219/cita_secp256k1_sha3.tar.gz   \
 
 COPY ./docker-entrypoint.sh ./cita_secp256k1_sha3
 
-RUN cd cita_secp256k1_sha3 && pwd  && ls -l
-
 WORKDIR /root/cita/cita_secp256k1_sha3
 RUN chmod +x ./docker-entrypoint.sh
 ENTRYPOINT ["./docker-entrypoint.sh"]
