@@ -11,6 +11,6 @@ COPY ./docker-entrypoint_sm2.sh ./cita_sm2_sm3
 
 WORKDIR /root/cita/cita_sm2_sm3
 RUN chmod +x ./docker-entrypoint_sm2.sh
-ENTRYPOINT ["./docker-entrypoint_sm2.sh"]
+CMD ["./docker-entrypoint_sm2.sh"]
 
 

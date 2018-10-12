@@ -11,6 +11,6 @@ COPY ./docker-entrypoint_blake2b.sh ./cita_ed25519_blake2b
 
 WORKDIR /root/cita/cita_ed25519_blake2b
 RUN chmod +x ./docker-entrypoint_blake2b.sh
-ENTRYPOINT ["./docker-entrypoint_blake2b.sh"]
+CMD ["./docker-entrypoint_blake2b.sh"]
 
 
