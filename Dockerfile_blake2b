@@ -8,9 +8,11 @@ RUN curl -O http://47.104.128.219/cita_ed25519_blake2b.tar.gz   \
     && cd cita_ed25519_blake2b
 
 COPY ./docker-entrypoint_blake2b.sh ./cita_ed25519_blake2b
+ADD http://47.104.128.219/cita-cli /usr/bin/
 
 WORKDIR /root/cita/cita_ed25519_blake2b
-RUN chmod +x ./docker-entrypoint_blake2b.sh
+RUN chmod +x ./docker-entrypoint_blake2b.sh \
+     && chmod +x /usr/bin/cita-cli
 CMD ["./docker-entrypoint_blake2b.sh"]
 
 

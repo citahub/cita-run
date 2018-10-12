@@ -8,9 +8,11 @@ RUN curl -O http://47.104.128.219/cita_secp256k1_sha3.tar.gz   \
     && cd cita_secp256k1_sha3
 
 COPY ./docker-entrypoint.sh ./cita_secp256k1_sha3
+ADD http://47.104.128.219/cita-cli /usr/bin/
 
 WORKDIR /root/cita/cita_secp256k1_sha3
-RUN chmod +x ./docker-entrypoint.sh
+RUN chmod +x ./docker-entrypoint.sh \
+     && chmod +x /usr/bin/cita-cli
 CMD ["./docker-entrypoint.sh"]
 
 
