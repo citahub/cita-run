@@ -8,6 +8,6 @@ RUN apt-get update \
     && apt-get autoremove \
     && apt-get clean \
     && apt-get autoclean \
-    && wget https://github.com/cryptape/cita/releases/download/v0.18/cita_secp256k1_sha3.tar.gz  \
+    && wget https://github.com/cryptape/cita/releases/download/v0.19/cita_secp256k1_sha3.tar.gz  \
     && tar zxvf cita_secp256k1_sha3.tar.gz \
     && rm -rf cita_secp256k1_sha3.tar.gz
