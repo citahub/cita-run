@@ -17,6 +17,7 @@ RUN apt-get update \
                           sysstat \
                           sudo \
                           ca-certificates \
+                          libzmq3-dev \
     && cd .. \
     && rm -rf /var/lib/apt/lists \
     && apt-get autoremove \
