@@ -9,5 +9,5 @@ else
     # Can use sudo without password
     echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-    exec /usr/bin/gosu user "$@"
+    exec /usr/sbin/gosu user "$@"
 fi
