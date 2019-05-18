@@ -14,7 +14,7 @@ RUN curl -u ${JUSER}:${PASSWORD} -O ${CITA_TAR}   \
     && cd ${CITA_DIR}
 
 COPY ./docker-entrypoint.sh ./${CITA_DIR}
-ADD https://cdn.cryptape.com/cita-cli /usr/bin/
+ADD https://cdn.cryptape.com/cita-cli24 /usr/bin/cita-cli
 
 WORKDIR /root/cita/${CITA_DIR}
 RUN chmod +x ./docker-entrypoint.sh \
