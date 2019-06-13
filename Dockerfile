@@ -4,6 +4,7 @@ LABEL maintainer="Cryptape Technologies <contact@cryptape.com>"
 # Ref:
 #   + https://github.com/tianon/gosu/blob/master/INSTALL.md#from-debian
 RUN apt-get update \
+ && apt-get upgrade -y \
  && apt-get install -y \
     rabbitmq-server \
     python3-pip \
