@@ -1,4 +1,4 @@
-FROM cita/cita-run:ubuntu-18.04-20181009
+FROM cita/cita-run:ubuntu-18.04-20191128
 MAINTAINER jiangxianliang88@gmail.com
 
 ARG CITA_TAR=cita_secp256k1_sha3.tar.gz
@@ -14,7 +14,7 @@ RUN curl -u ${JUSER}:${PASSWORD} -O ${CITA_TAR}   \
     && cd ${CITA_DIR}
 
 COPY ./docker-entrypoint.sh ./${CITA_DIR}
-ADD https://cdn.cryptape.com/cita-cli /usr/bin/
+ADD https://cdn.citahub.com/cita-cli197 /usr/bin/cita-cli
 
 WORKDIR /root/cita/${CITA_DIR}
 RUN chmod +x ./docker-entrypoint.sh \
