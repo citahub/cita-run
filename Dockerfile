@@ -14,7 +14,7 @@ RUN curl -u ${JUSER}:${PASSWORD} -O ${CITA_TAR}   \
     && cd ${CITA_DIR}
 
 COPY ./docker-entrypoint.sh ./${CITA_DIR}
-ADD https://cdn.citahub.com/cita-cli197 /usr/bin/cita-cli
+ADD https://cdn.citahub.com/cita-cli120 /usr/bin/cita-cli
 
 WORKDIR /root/cita/${CITA_DIR}
 RUN chmod +x ./docker-entrypoint.sh \
