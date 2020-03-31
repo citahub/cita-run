@@ -10,7 +10,6 @@ RUN apt-get update \
     capnproto \
     libsnappy-dev \
     libgoogle-perftools-dev \
-    libssl-dev \
     libsodium* \
     libsecp256k1-dev \
     pkg-config \
