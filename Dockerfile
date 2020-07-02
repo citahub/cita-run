@@ -21,6 +21,7 @@ RUN apt-get update \
     sudo \
     ca-certificates \
     gosu \
+    iproute2 \
  # verify that the binary works
  && gosu nobody true \
  && cd .. \
